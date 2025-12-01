@@ -1,0 +1,16 @@
+# --- กฎเหล็ก ห้ามเอาไฟล์พวกนี้ขึ้น GitHub เด็ดขาด ---
+
+# 1. โฟลเดอร์ขยะ (ของ Client และ Server)
+node_modules/
+
+# 2. ไฟล์ความลับ (รหัสผ่าน Database)
+.env
+.env.local
+.env.*
+
+# 3. ไฟล์ที่ Build แล้ว (ขยะจากการรัน)
+dist/
+build/
+.DS_Store
+logs/
+*.log
