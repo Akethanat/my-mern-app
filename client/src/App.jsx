@@ -9,10 +9,13 @@ function App() {
   const [job, setJob] = useState("");
   const [userList, setUserList] = useState([]);
 
+  API_URL = "https://akethana-mern-app.onrender.com"
+  Local_URL = "http://localhost:3001"
+
   const createUser = async () => {
     try {
       // ใช้ fetch ส่งข้อมูล
-      const response = await fetch("http://localhost:3001/createUser", {
+      const response = await fetch("API_URL/createUser", {
         method: "POST", // 1. บอกว่าเป็น POST (ส่งของ)
         headers: {
           "Content-Type": "application/json", // 2. บอกว่าเนื้อหาที่ส่งคือ JSON
@@ -45,7 +48,7 @@ function App() {
     const getUsers = async () => {
       try {
         // ยิงไปขอข้อมูล (Method default คือ GET อยู่แล้ว ไม่ต้องใส่ options ก็ได้)
-        const response = await fetch("http://localhost:3001/getUsers");
+        const response = await fetch("API_URL/getUsers");
 
         if (response.ok) {
           const data = await response.json(); // แปลง JSON เป็น Object Array
@@ -62,7 +65,7 @@ function App() {
   const deleteUser = async (id) => {
     try {
       // ส่งคำสั่ง DELETE ไปที่ Server พร้อมแนบ ID ไปด้านหลัง URL
-      const response = await fetch(`http://localhost:3001/deleteUser/${id}`, {
+      const response = await fetch(`API_URL/deleteUser/${id}`, {
         method: "DELETE",
       });
 
@@ -85,7 +88,7 @@ function App() {
 
     try {
       // 2. ยิงไปหลังบ้าน
-      const response = await fetch("http://localhost:3001/updateUser", {
+      const response = await fetch("API_URL/updateUser", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
