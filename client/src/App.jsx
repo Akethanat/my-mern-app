@@ -9,8 +9,8 @@ function App() {
   const [job, setJob] = useState("");
   const [userList, setUserList] = useState([]);
 
-  API_URL = "https://akethana-mern-app.onrender.com"
-  Local_URL = "http://localhost:3001"
+  const API_URL = "https://akethana-mern-app.onrender.com"
+  const Local_URL = "http://localhost:3001"
 
   const createUser = async () => {
     try {
